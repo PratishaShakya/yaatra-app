@@ -1,7 +1,3 @@
+var name = [];
 
-
-if( 5 == 5 && 6 == 6){
-
-} else{
-
-}
+console.log(name.length);
