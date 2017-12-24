@@ -5,11 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var session = require('express-session');
 // var index = require('./routes/index');
 // var users = require('./routes/users');
 var routes = require('./routes/index');
 var app = express();
+
+app.use(session({
+    secret: 'pratisha',
+    resave: 'true',
+    saveUninitialized: 'false'
+}));
 
 mongoose.connect('mongodb://localhost/yaatra-app');
 var db = mongoose.connection;

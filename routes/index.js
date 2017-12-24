@@ -8,19 +8,26 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/login', function (req, res, next) {
-    res.render('login', {title: 'Express'});
+    if(req.session.useremail){
+        res.render('admin-panel', {title: 'Express'});
+    } else {
+        res.render('login', {title: 'Express'});
+    }
 });
 
 
 router.post('/login', function (req, res, next) {
-    console.log(req.body.email);
+    // console.log(req.body.email);
+    // console.log('session',req.session);
 
-   User.find({
+
+    User.find({
        email: req.body.email,
        password: req.body.password
    },function(err, user) {
 
        if(user.length){
+           req.session.useremail = req.body.email;
            res.render('admin-panel');
        } else{
            res.render('index', {title: 'Express'});
@@ -31,7 +38,11 @@ router.post('/login', function (req, res, next) {
 })
 
 router.get('/admin', function (req, res, next) {
-    res.render('admin-panel', {title: 'Express'});
+    if(req.session.useremail){
+        res.render('admin-panel', {title: 'Express'});
+    } else {
+        res.render('index', {title: 'Express'});
+    }
 });
 
 
