@@ -4,11 +4,21 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+mongoose.connect('mongodb://localhost/yaatra-app');
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connnection error'));
+db.once('open', function(){
+  //we're connnected!
+    console.log('connected');
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
