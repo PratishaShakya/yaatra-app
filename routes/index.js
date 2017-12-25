@@ -5,14 +5,14 @@ var Homestays = require('../model/homestays');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Express'});
+    res.render('index', {title: 'Yaatra'});
 });
 
 router.get('/login', function (req, res, next) {
     if(req.session.useremail){
-        res.render('admin-panel', {title: 'Express'});
+        res.render('admin-panel', {title: 'Yaatra'});
     } else {
-        res.render('login', {title: 'Express'});
+        res.render('login', {title: 'Yaatra'});
     }
 });
 
@@ -31,7 +31,7 @@ router.post('/login', function (req, res, next) {
            req.session.useremail = req.body.email;
            res.render('admin-panel');
        } else{
-           res.render('index', {title: 'Express'});
+           res.render('index', {title: 'Yaatra'});
        }
 
    });
@@ -45,7 +45,7 @@ router.get('/homestays', function(req, res, next) {
         if(req.session.useremail){
             res.render('homestays', {homestay: homestay});
         } else {
-            res.render('index', {title: 'Express'});
+            res.render('index', {title: 'Yaatra'});
         }
     })
 
@@ -97,9 +97,9 @@ router.get('/homestays/:id', function(req, res, next) {
 
 router.get('/admin', function (req, res, next) {
     if(req.session.useremail){
-        res.render('admin-panel', {title: 'Express'});
+        res.render('admin-panel', {title: 'Yaatra'});
     } else {
-        res.render('index', {title: 'Express'});
+        res.render('index', {title: 'Yaatra'});
     }
 });
 
