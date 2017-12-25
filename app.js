@@ -17,7 +17,9 @@ app.use(session({
     saveUninitialized: 'false'
 }));
 
-mongoose.connect('mongodb://localhost/yaatra-app');
+
+
+mongoose.connect('mongodb://yaatra-app:yaatra-app@ds163595.mlab.com:63595/yaatra-app');
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connnection error'));
