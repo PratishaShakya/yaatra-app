@@ -1,9 +1,10 @@
 //full screen
 .banner{
   height: 100vh;
-  background: linear-gradient(rgba(#222328,0.5), rgba(#222328,0.4)),url('https://wallpapercave.com/wp/bw5OjaO.jpg');
+  background: linear-gradient(rgba(#222328,0.5), rgba(#222328,0.4)),url('https://wallpapercave.com/wp/bw5OjaO.jpg') no-repeat;
   display: flex;
   align-items: center;
+
   //cener content in page
   .container{
     max-width: 960px;
