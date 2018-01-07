@@ -1,5 +1,16 @@
 @import "./base/reset";
 @import "./base/base";
 @import "./components/navbar";
+@import "./components/map";
 @import "./pages/home/banner";
+@import "./pages/home/trekking-routes";
+@import "./pages/admin/login";
+@import "./pages/admin/admin-panel";
+
+.title{
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
 

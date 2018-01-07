@@ -5,7 +5,8 @@ var homestaysSchema = new Schema({
     name: String,
     price: Number,
     location: String,
-    description: String
+    description: String,
+    imagePath: String
 },{
     collection: 'homestays'
 });

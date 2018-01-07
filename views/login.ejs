@@ -1,10 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./common/head %>
+</head>
+<body>
+
+<div class="login-form">
+<form action="/login" method="post">
+    <div class="form-group">
+        <label for="inputEmail">Email address</label>
+        <input type="email" name="email" placeholder="name" class="form-control" id="inputEmail">
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="password" name="password" placeholder="password" class="form-control" id="inputPassword" >
+    </div>
+    <input type="submit" name="Login" value="login" class="btn btn-primary btn-block">
+</form>
+</div>
+
+</body>
+</html>
+
 <div>
 
-    <form action="/login" method="post">
-        <input type="email" name="email" placeholder="name">
-        <input type="password" name="password" placeholder="password" >
-        <input type="submit" name="Login" value="login">
-
-    </form>
 
 </div>
