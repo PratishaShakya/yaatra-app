@@ -1,0 +1,38 @@
+//full screen
+.banner{
+  height: 100vh;
+  background: linear-gradient(rgba(#222328,0.5), rgba(#222328,0.4)),url('https://wallpapercave.com/wp/bw5OjaO.jpg');
+  display: flex;
+  align-items: center;
+  //cener content in page
+  .container{
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+
+  .tagline{
+
+    text-align: center;
+
+    .tagline-hero{
+      font-size: 60px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+
+    }
+
+    .tagline-des{
+      font-size: 24px;
+      color: white;
+
+    }
+
+  }
+
+
+
+
+}
+
