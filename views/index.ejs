@@ -39,8 +39,28 @@
 
 
   <section class="homestays-home">
-    <div class="container">
-      Homestays list
+      <div class="container">
+        <div class="row">
+
+            <%  homestays.forEach(function(val){ %>
+              <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src=" <%= '/images/homestays/'+ val.imagePath %>"" alt="Card image cap">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= val.name %></h5>
+                    <p class="card-text"><%= val.description %></p>
+                    <span class="card-price"><%= val.price %></span>
+                    <a href="<%= '/homestays/'+ val.id %>" class="btn btn-primary">Read more</a>
+                  </div>
+                </div>
+              </div>
+
+
+            <% }) %>
+
+      </div>
+
+
     </div>
   </section>
 

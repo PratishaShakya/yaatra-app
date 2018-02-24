@@ -21,7 +21,11 @@ var upload = multer({ storage: storage }).single('file');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Yaatra' });
+
+    Homestays.find(function(err, homestay) {
+        res.render('index', { title: 'Yaatra', homestays: homestay });
+    });
+
 });
 
 router.get('/admin-panel', function(req, res, next) {
@@ -127,13 +131,15 @@ router.post('/homestays/delete/:id',function(req,res,next) {
 
 //get homestay
 router.get('/homestays/:id', function(req, res, next) {
-  console.log('in homestay id');
+
 
   Homestays.find({ _id: req.params.id }, function(err, data) {
+      console.log(data[0].name);
+
     if (err) {
       console.log(err);
     } else {
-        res.redirect('/admin-panel');
+        res.render('homestaydetails', { title: 'Yaatra', data: data[0] });
     }
   });
 });
